@@ -13,8 +13,13 @@ function MyApp({ Component, pageProps }) {
 	return <Component {...pageProps} />;
 }
 
-export default ({ Component, pageProps }) => (
-	<ThemeProvider>
-		<MyApp Component={Component} pageProps={pageProps} />
-	</ThemeProvider>
-);
+// Wrap MyApp with ThemeProvider in a named function component
+function AppWithTheme({ Component, pageProps }) {
+	return (
+		<ThemeProvider>
+			<MyApp Component={Component} pageProps={pageProps} />
+		</ThemeProvider>
+	);
+}
+
+export default AppWithTheme;
