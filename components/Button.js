@@ -1,5 +1,5 @@
 import { useTheme } from "@/ThemeContext";
-import { handleOptionButton } from "@/utils/handleOptionsButton";
+import handleOptionButton from "@/utils/handleOptionsButton";
 
 export default function Button(props) {
 	const { dispatch } = useTheme();
