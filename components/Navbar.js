@@ -66,12 +66,12 @@ export default function Navbar() {
 					</Link>
 				</li>
 				<li className="h-full" key="cvItem">
-					<Link className="inline-block w-full px-2" href={"/Cv"}>
+					<Link className="inline-block w-full px-2" href={"/cv"}>
 						CV
 					</Link>
 				</li>
 				<li className={liClass} key="contactItem">
-					<Link className="inline-block w-full px-2" href={"/Contact"}>
+					<Link className="inline-block w-full px-2" href={"/contact"}>
 						Contact
 					</Link>
 				</li>
