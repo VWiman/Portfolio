@@ -5,15 +5,14 @@ import Button from "./Button";
 export default function Navbar() {
 	const { state } = useTheme();
 
-	const navClass = `flex flex-row sticky top-0 justify-between px-40 pt-5 ${
-		state.theme === "white" ? "border-black" : "border-white"
-	}`;
-
-	const asideClass = `flex flex-row  gap-4 px-3 border bg-${state.theme} ${
+	const navClass = `flex flex-row sticky top-0 justify-between bg-${state.theme} shadow-bottom-black pt-10 font-mono`;
+	const ulClass = `flex flex-row items-center border-b border-black bg-${state.theme} ${
+		state.theme === "white" ? "text-black border-black" : "text-white border-white"
+	} font-medium text-lg`;
+	const asideClass = `flex flex-row gap-4 border-x border-black px-2 border-b bg-${state.theme} ${
 		state.theme === "white" ? "text-black border-black" : "text-white border-white"
 	}`;
-
-	const ulClass = `flex flex-row items-center gap-2 p-2 border border-black bg-${state.theme} ${
+	const h1Class = `flex flex-row justify-center border-b text-lg w-full ${
 		state.theme === "white" ? "text-black border-black" : "text-white border-white"
 	}`;
 
@@ -22,10 +21,10 @@ export default function Navbar() {
 	const optionButtons = [
 		{
 			type: "colorTheme",
-			variant: "black",
+			variant: "gray-800",
 			label: null,
-			buttonTailwind: `h-4 w-4 bg-black self-center ${
-				state.theme === "black" ? "border-2 hover:border-2 border-white" : "border-2 border-none"
+			buttonTailwind: `h-4 w-4 bg-gray-800 self-center ${
+				state.theme === "gray-800" ? "border-2 border-white" : "border-2 border-none"
 			}`,
 		},
 		{
@@ -33,7 +32,7 @@ export default function Navbar() {
 			variant: "white",
 			label: null,
 			buttonTailwind: `h-4 w-4 bg-white self-center ${
-				state.theme === "white" ? "border-2 hover:border-2 border-black" : "border-2 border-none"
+				state.theme === "white" ? "border-2 border-black" : "border-2 border-none"
 			}`,
 		},
 		{
@@ -41,7 +40,7 @@ export default function Navbar() {
 			variant: "red-500",
 			label: null,
 			buttonTailwind: `h-4 w-4 bg-red-500 self-center ${
-				state.theme === "red-500" ? "border-2 hover:border-2 border-white" : "border-none"
+				state.theme === "red-500" ? "border-2 border-white" : "border-none"
 			}`,
 		},
 		{
@@ -49,7 +48,7 @@ export default function Navbar() {
 			variant: "blue-500",
 			label: null,
 			buttonTailwind: `h-4 w-4 bg-blue-500 self-center ${
-				state.theme === "blue-500" ? "border-2 hover:border-2 border-white" : "border-none"
+				state.theme === "blue-500" ? "border-2 border-white" : "border-none"
 			}`,
 		},
 		{ type: "fontTheme", variant: "sm", label: "A", buttonTailwind: "text-sm" },
@@ -60,17 +59,25 @@ export default function Navbar() {
 	return (
 		<nav className={navClass}>
 			<ul className={ulClass}>
-				<li key="portfolioItem">
-					<Link href={"/"}>Portfolio</Link>
+				<li className="border-x border-black h-full" key="portfolioItem">
+					<Link className="inline-block w-full px-2" href={"/"}>
+						Portfolio
+					</Link>
 				</li>
-				<li key="cvItem">
-					<Link href={"/cv"}>CV</Link>
+				<li className="h-full" key="cvItem">
+					<Link className="inline-block w-full px-2" href={"/cv"}>
+						CV
+					</Link>
 				</li>
-				<li key="contactItem">
-					<Link href={"/contact"}>Contact</Link>
+				<li className="border-x border-black h-full" key="contactItem">
+					<Link className="inline-block w-full px-2" href={"/contact"}>
+						Contact
+					</Link>
 				</li>
 			</ul>
-
+			<h1 className={h1Class}>
+				<span className="hidden font-medium text-xl sm:flex flex-row whitespace-nowrap">Viktor Wiman</span>
+			</h1>
 			<aside className={asideClass}>
 				{optionButtons.map(({ type, variant, label, buttonTailwind }) => {
 					return (

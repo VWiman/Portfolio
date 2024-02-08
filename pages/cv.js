@@ -1,7 +1,11 @@
+import { useTheme } from "@/ThemeContext";
 import Layout from "@/components/Layout";
 
 export default function cv() {
-	const articleClass = "flex flex-col pt-5 self-center max-w-fit p-5 gap-2";
+	const { state } = useTheme();
+	const articleClass = `flex flex-col self-center pt-5 gap-2 lg:border-x w-full px-10 ${
+		state.theme === "white" ? "text-black border-black" : "text-white border-white"
+	} inset-shadow-left-right-black min-h-screen`;
 	const sectionClass = "flex flex-row";
 
 	return (
