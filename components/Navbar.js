@@ -5,7 +5,7 @@ import Button from "./Button";
 export default function Navbar() {
 	const { state } = useTheme();
 
-	const navClass = `flex flex-row sticky top-0 justify-between bg-${state.theme} shadow-bottom-black pt-10 font-mono`;
+	const navClass = `flex flex-row sticky top-0 justify-between bg-${state.theme} shadow-bottom-black pt-10`;
 	const ulClass = `flex flex-row items-center border-b border-black bg-${state.theme} ${
 		state.theme === "white" ? "text-black border-black" : "text-white border-white"
 	} font-medium text-lg`;
@@ -14,7 +14,8 @@ export default function Navbar() {
 	}`;
 	const h1Class = `flex flex-row justify-center border-b text-lg w-full ${
 		state.theme === "white" ? "text-black border-black" : "text-white border-white"
-	}`;
+		}`;
+	const liClass = `border-x ${state.theme === "white" ? "border-black" : "border-white"}  h-full`
 
 	// Collected Tailwind for buttons
 
@@ -59,18 +60,18 @@ export default function Navbar() {
 	return (
 		<nav className={navClass}>
 			<ul className={ulClass}>
-				<li className="border-x border-black h-full" key="portfolioItem">
+				<li className={liClass} key="portfolioItem">
 					<Link className="inline-block w-full px-2" href={"/"}>
 						Portfolio
 					</Link>
 				</li>
 				<li className="h-full" key="cvItem">
-					<Link className="inline-block w-full px-2" href={"/cv"}>
+					<Link className="inline-block w-full px-2" href={"/Cv"}>
 						CV
 					</Link>
 				</li>
-				<li className="border-x border-black h-full" key="contactItem">
-					<Link className="inline-block w-full px-2" href={"/contact"}>
+				<li className={liClass} key="contactItem">
+					<Link className="inline-block w-full px-2" href={"/Contact"}>
 						Contact
 					</Link>
 				</li>
