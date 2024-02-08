@@ -1,7 +1,7 @@
 import { useTheme } from "@/ThemeContext";
 import Layout from "@/components/Layout";
 
-export default function contact() {
+export default function Contact() {
 	const { state } = useTheme();
 	const articleClass = `flex flex-col self-center pt-5 gap-2 lg:border-x w-full px-10 ${
 		state.theme === "white" ? "text-black border-black" : "text-white border-white"
