@@ -1,5 +1,5 @@
 import { useTheme } from "@/ThemeContext";
-import HandleOptionButton from "@/utils/HandleOptionsButton";
+import HandleOptionButton from "@/utils/handleOptionsButton";
 
 export default function AnimationButton() {
 	const { state, dispatch } = useTheme();
