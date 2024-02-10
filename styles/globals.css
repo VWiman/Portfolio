@@ -17,10 +17,10 @@
 }
 
 .shadow-bottom-black {
-  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 18px 16px -16px rgba(0, 0, 0, 0.2);
 }
 
 .inset-shadow-left-right-black {
-  box-shadow: inset 8px 0 6px -6px rgba(0, 0, 0, 0.2),
-  inset -8px 0 6px -6px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 18px 0 16px -16px rgba(0, 0, 0, 0.2),
+  inset -18px 0 16px -16px rgba(0, 0, 0, 0.2);
 }

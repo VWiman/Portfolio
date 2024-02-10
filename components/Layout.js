@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 export default function Layout({ children }) {
 	const { state } = useTheme();
 
-	const mainClass = `flex flex-col ${state.tailwind} min-h-screen ${state.userPreferences.fontSize} ${
+	const mainClass = `flex flex-col min-h-screen ${state.userPreferences.fontSize} ${
 		state.theme === "white" ? "text-black" : "text-white"
 	}`;
 

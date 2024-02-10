@@ -16,6 +16,12 @@ function themeReducer(state, action) {
 		case "colorTheme": {
 			return { ...state, theme: variant, tailwind: `bg-${variant}` };
 		}
+		case "reduceAnimation": {
+			return {
+				...state,
+				userPreferences: { ...state.userPreferences, reduceAnimations: variant }
+			}
+		}
 		case "fontTheme": {
 			return {
 				...state,
