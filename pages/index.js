@@ -33,7 +33,7 @@ export default function Home() {
 			<article className={articleClass}>
 				<h2 className="py-2 font-medium">Studies - Chas Academy</h2>
 				<section className={sectionClass}>
-					<grid className="grid grid-flow-col">
+					<div className="grid grid-flow-col">
 						<ul className="flex flex-col sm:flex-row gap-10">
 							{schoolPortfolio.map((item) => {
 								return (
@@ -48,7 +48,7 @@ export default function Home() {
 								);
 							})}
 						</ul>
-					</grid>
+					</div>
 				</section>
 			</article>
 		</Layout>

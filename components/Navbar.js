@@ -7,7 +7,7 @@ import AnimationButton from "./AnimationButton";
 export default function Navbar() {
 	const { state } = useTheme();
 
-	const navClass = `flex flex-row sticky top-0 justify-between bg-${state.theme} shadow-bottom-black pt-10`;
+	const navClass = `flex flex-row sticky top-0 justify-between bg-${state.theme} shadow-bottom-black pt-10 z-10`;
 
 	const ulClass = `flex flex-row items-center border-b border-black bg-${state.theme} ${
 		state.theme === "white" ? "text-black border-black" : "text-white border-white"
@@ -17,7 +17,7 @@ export default function Navbar() {
 		state.theme === "white" ? "text-black border-black" : "text-white border-white"
 	}`;
 
-	const h1Class = `flex flex-row justify-center border-b text-lg w-full ${
+	const h1Class = `flex flex-row justify-center border-b w-full ${
 		state.theme === "white" ? "text-black border-black" : "text-white border-white"
 	}`;
 
@@ -30,6 +30,8 @@ export default function Navbar() {
 			  state.theme +
 			  " hover:border-t-white select-none"
 	} h-full`;
+
+	const linkClass = "inline-block w-full px-2 text-sm md:text-lg";
 
 	const optionButtons = [
 		{
@@ -73,17 +75,17 @@ export default function Navbar() {
 		<nav className={navClass}>
 			<ul className={ulClass}>
 				<li className={`lg:border-x ${liClass}`} key="portfolioItem">
-					<Link className="inline-block w-full px-2 text-sm sm:text-lg" href={"/"}>
+					<Link className={linkClass} href={"/"}>
 						Portfolio
 					</Link>
 				</li>
 				<li className={`${liClass}`} key="cvItem">
-					<Link className="inline-block w-full px-2 text-sm sm:text-lg" href={"/cv"}>
+					<Link className={linkClass} href={"/cv"}>
 						CV
 					</Link>
 				</li>
 				<li className={`lg:border-x ${liClass} sm:border-r`} key="contactItem">
-					<Link className="inline-block w-full px-2 text-sm sm:text-lg" href={"/contact"}>
+					<Link className={linkClass} href={"/contact"}>
 						Contact
 					</Link>
 				</li>
@@ -92,7 +94,7 @@ export default function Navbar() {
 				<NameLogo />
 			</h1>
 			<aside className={asideClass}>
-			<AnimationButton />
+				<AnimationButton />
 				{optionButtons.map(({ type, variant, label, buttonTailwind }) => {
 					return (
 						<Button

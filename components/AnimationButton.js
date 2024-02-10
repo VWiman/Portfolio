@@ -1,5 +1,5 @@
 import { useTheme } from "@/ThemeContext";
-import handleOptionButton from "@/utils/handleOptionsButton";
+import HandleOptionButton from "@/utils/HandleOptionsButton";
 
 export default function AnimationButton() {
 	const { state, dispatch } = useTheme();
@@ -9,7 +9,7 @@ export default function AnimationButton() {
 		<div
 			className="flex items-center select-none cursor-pointer"
 			onClick={() => {
-				handleOptionButton(type, !state.userPreferences.reduceAnimations, dispatch);
+				HandleOptionButton(type, !state.userPreferences.reduceAnimations, dispatch);
 			}}>
 			<label className="cursor-pointer text-sm" htmlFor="reduce">
 				Animations&nbsp;

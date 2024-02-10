@@ -1,5 +1,5 @@
 import { useTheme } from "@/ThemeContext";
-import handleOptionButton from "@/utils/handleOptionsButton";
+import HandleOptionButton from "@/utils/HandleOptionsButton";
 
 export default function Button(props) {
 	const { dispatch } = useTheme();
@@ -9,7 +9,7 @@ export default function Button(props) {
 	switch (buttonType) {
 		case "optionsButton": {
 			return (
-				<button className={buttonTailwind} onClick={() => handleOptionButton(type, variant, dispatch)}>
+				<button className={buttonTailwind} onClick={() => HandleOptionButton(type, variant, dispatch)}>
 					{label}
 				</button>
 			);

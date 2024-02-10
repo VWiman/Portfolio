@@ -10,7 +10,7 @@ export default function NameLogo() {
 	const textColor = state.theme === "white" ? black : white;
 
 	return (
-		<svg className="hidden sm:flex sm:flex-row" width="250" height="40" xmlns="http://www.w3.org/2000/svg">
+		<svg className="hidden md:flex md:flex-row" width="250" height="40" xmlns="http://www.w3.org/2000/svg">
 			<text
 				className="hidden sm:flex sm:flex-row"
 				x="125"
